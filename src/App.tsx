@@ -3,8 +3,11 @@ import './App.css'
 function App() {
   return (
     <main>
-      <header>
-        <h1>Creating 3DGS Splats (Iterative Training Method)</h1>
+       <header>
+        <h1>Comparing 3D-Gaussian Splatting ,NeRFs and Photogrammetry in 3D Reconstruction</h1>
+        </header>
+      <section>
+      <h2>Creating 3DGS Splats (Iterative Training Method)</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, facere magni, possimus numquam non error iusto nulla reprehenderit saepe esse quisquam vitae, asperiores eius facilis autem dolorem labore magnam quia.
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, facere magni, possimus numquam non error iusto nulla reprehenderit saepe esse quisquam vitae, asperiores eius facilis autem dolorem labore magnam quia.
@@ -13,7 +16,7 @@ function App() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, facere magni, possimus numquam non error iusto nulla reprehenderit saepe esse quisquam vitae, asperiores eius facilis autem dolorem labore magnam quia.
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, facere magni, possimus numquam non error iusto nulla reprehenderit saepe esse quisquam vitae, asperiores eius facilis autem dolorem labore magnam quia.
         </p>
-      </header>
+      </section>
 
       <section aria-labelledby="banana-heading">
         <h2 id="banana-heading">Banana (Data Set 1)</h2>
