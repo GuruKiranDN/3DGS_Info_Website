@@ -19,7 +19,7 @@ function App() {
         <h2 id="banana-heading">Banana (Data Set 1)</h2>
         <div className="iteration-grid">
           <article>
-            <h3>2,000 Iterationss</h3>
+            <h3>2,000 Iterations</h3>
             <iframe 
               src="https://splatter.app/s/eo9-khl" 
               width="500" 
