@@ -67,6 +67,38 @@ function App() {
         <Carousel images={gaussianSplattingImages} title="3D Gaussian Splatting Process" />
       </section>
 
+      <section className='section-example-3dgs'>
+      <h2>Example of 3DGS using OpenSplat(Open Source 3DGS Software)</h2>
+        <p>
+          We have used OpenSplat to render the 3DGS of a banana and a truck. OpenSplat is an open source 3DGS software that is free to use and is available on GitHub.
+        </p>
+      </section>
+
+    <section className='section-step-1-3dgs'>
+      <h2>Step 1: Import the images into OpenSplat and create Sparse Point Clouds using Structure from Motion (SfM)</h2>
+        <p>
+        The first step is to import the images into OpenSplat and create Sparse Point Clouds using Structure from Motion (SfM). This is done by selecting the images and clicking on the "Create Sparse Point Clouds" button in a software called Colmap. Nerfstudio,colmap,OpenSfM are some of the software that can be used to create Sparse Point Clouds.
+        </p>
+    </section>
+    <section className='section-step-2-3dgs'>
+      <h2>Step 2: Populate the Sparse Point Clouds with 3D Gaussians</h2>
+        <p>
+        The second step is to populate the Sparse Point Clouds with 3D Gaussians. This is done by selecting the Sparse Point Clouds and clicking on the "Populate with 3D Gaussians" button in OpenSplat.
+        </p>
+    </section>
+    <section className='section-step-3-3dgs'>
+      <h2>Step 3: Render the 3DGS using Splatter.app</h2>
+        <p>
+        The third step is to render the 3DGS .ply file using a service like Splatter.app. Splatter.app is a service that allows you to render 3DGS .ply files in real time.
+        </p>
+    </section>
+    <section className='section-Example-3dgs'>
+      <h2>Example of 3DGS using Splatter.app</h2>
+        <p>
+        We have used Splatter.app to render the 3DGS of a banana and a truck.
+        </p>
+    </section>
+
       <section aria-labelledby="banana-heading">
         <h2 id="banana-heading">Banana (Data Set 1)</h2>
         <div className="iteration-grid">
