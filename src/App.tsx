@@ -180,6 +180,160 @@ function App() {
           </article>
         </div>
       </section>
+      <section className='section-conclusion'>
+        <h2>Comparison of 3DGS, NeRFs and Photogrammetry Side by Side</h2>
+        
+        <div className="comparison-container">
+          <div className="comparison-table-wrapper">
+            <table className="comparison-table">
+              <thead>
+                <tr>
+                  <th className="aspect-column">Aspect</th>
+                  <th className="technology-column">3DGS</th>
+                  <th className="technology-column">NeRF</th>
+                  <th className="technology-column">Photogrammetry</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="category-header">
+                  <td colSpan={4}><strong>PERFORMANCE & SPEED</strong></td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Hardware Requirements</td>
+                  <td>Modern GPU (RTX 3000+ series recommended) 8-24 GB VRAM for rendering</td>
+                  <td>GPU required for training. Can be CPU-rendered (very slow)</td>
+                  <td>CPU processing possible. GPU accelerates reconstruction</td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Rendering Speed</td>
+                  <td>60-120+ FPS at high resolution</td>
+                  <td>Seconds to minutes per frame</td>
+                  <td>Depends on mesh complexity</td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Training Time</td>
+                  <td>5-30 minutes on modern GPU</td>
+                  <td>Hours to days (1-48 hours typical)</td>
+                  <td>Minutes to hours depending on scene complexity</td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Editability</td>
+                  <td>Can edit individual Gaussians. Emerging tools for editing</td>
+                  <td>Hard to edit specific regions. Requires retraining for changes</td>
+                  <td>Full mesh editing in any 3D software. Standard workflows</td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Exportability</td>
+                  <td>Can export as point cloud or mesh (with loss). Not standard format yet</td>
+                  <td>Must bake to mesh (quality loss). Primarily for rendering only</td>
+                  <td>Standard formats (OBJ, FBX, GLTF). Universal compatibility</td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Camera Pose Requirements</td>
+                  <td>Precise poses required</td>
+                  <td>Precise poses required</td>
+                  <td>Calculated automatically</td>
+                </tr>
+                
+                <tr className="category-header">
+                  <td colSpan={4}><strong>VISUAL QUALITY</strong></td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Photorealism</td>
+                  <td>Near-identical to NeRF quality. Captures fine details and textures</td>
+                  <td>State-of-the-art photorealism. Best for complex lighting</td>
+                  <td>Realistic but can show mesh artifacts. Quality depends on photo coverage</td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Novel View Quality</td>
+                  <td>Smooth interpolation between views. Minimal artifacts</td>
+                  <td>Continuous representation. Perfect interpolation</td>
+                  <td>Quality degrades with extreme angles. Depends on mesh quality</td>
+                </tr>
+                
+                <tr className="category-header">
+                  <td colSpan={4}><strong>VR & GAME ENGINE COMPATIBILITY</strong></td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Unity Integration</td>
+                  <td>Custom renderers available. UnityGaussianSplatting plugin</td>
+                  <td>Pre-rendered only. No native real-time support</td>
+                  <td>Native mesh support. Standard import workflow</td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Unreal Engine Integration</td>
+                  <td>Community plugins emerging, Real-time rendering possible</td>
+                  <td>Research projects only, Not production-ready</td>
+                  <td>Full native support, Nanite compatible</td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">VR Headset Performance</td>
+                  <td>60-90 FPS achievable, Stereo rendering supported</td>
+                  <td>Too slow for real-time VR, Pre-rendered 360° only</td>
+                  <td>Standard VR rendering, Optimized pipelines</td>
+                </tr>
+                
+                <tr className="category-header">
+                  <td colSpan={4}><strong>USE CASES & APPLICATIONS</strong></td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Real-time VR Experiences</td>
+                  <td>Photorealistic + real-time, Emerging as new standard</td>
+                  <td>Pre-rendered experiences only</td>
+                  <td>Proven technology, Widest tool support</td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Virtual Tourism</td>
+                  <td>Real-time exploration, Photorealistic quality, Growing adoption</td>
+                  <td>Pre-rendered tours only, Exceptional visual quality, Limited interactivity</td>
+                  <td>Full freedom of movement, Editable environments, Proven solution</td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Game Development</td>
+                  <td>Experimental use cases, Real-time performance, Limited tooling currently</td>
+                  <td>Background assets only, No real-time gameplay, Baking required</td>
+                  <td>Standard asset creation, Full engine integration, Complete workflow</td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Architectural Visualization</td>
+                  <td>Real-time walkthroughs, Client presentations, Limited editing</td>
+                  <td>High-quality renders, Pre-rendered flythrough, Not for design iteration</td>
+                  <td>Full design workflow, Easy modifications, Industry standard</td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Cultural Heritage Preservation</td>
+                  <td>Fast capture processing, Interactive exploration, Photorealistic archival</td>
+                  <td>Highest quality preservation, Perfect for archival, Research standard</td>
+                  <td>Measurable 3D data, Conservation analysis, Long-term standard</td>
+                </tr>
+                
+                <tr>
+                  <td className="aspect-cell">Film/VFX Production</td>
+                  <td>Background environments, Real-time previsualization, New to pipeline</td>
+                  <td>High-quality renders, Research applications, Offline rendering</td>
+                  <td>Industry standard, Full pipeline integration, Asset creation</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
