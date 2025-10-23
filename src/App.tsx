@@ -24,14 +24,13 @@ function App() {
   return (
     <main>
        <header>
-        <h1>Comparing 3D-Gaussian Splatting ,NeRFs and Photogrammetry in 3D Reconstruction</h1>
+        <h1>Comparing 3D-Gaussian Splatting ,NeRFs and Photogrammetry in 3D Reconstruction from 2D Images</h1>
         </header>
 
       <section className='section-brief-introduction'>
       <h2>Brief Introduction</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, facere magni, possimus numquam non error iusto nulla reprehenderit saepe esse quisquam vitae, asperiores eius facilis autem dolorem labore magnam quia.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, facere magni, possimus numquam non error iusto nulla reprehenderit saepe esse quisquam vitae, asperiores eius facilis autem dolorem labore magnam quia.
+        This resource explores three 3D reconstruction techniques used widely today. They are the following: 3D Gaussian Splatting (3DGS), photogrammetry, and Neural Radiance Fields (NeRFs). Additionally, this site provides a blueprint with step-by-step instructions on how to use OpenSplat (an open-source software used to rasterize 3D scenes). Additionally, it consists of interactive examples featuring banana and truck models, each of which is rendered at three different splat densities (2,000, 6,000, and 30,000 splats) to demonstrate the quality and performance. Lastly, it also explores a comparison of each other through the topics of strengths, limitations, and real-world applications.
         </p>
       </section>
 
@@ -70,32 +69,32 @@ function App() {
       <section className='section-example-3dgs'>
       <h2>Example of 3DGS using OpenSplat(Open Source 3DGS Software)</h2>
         <p>
-          We have used OpenSplat to render the 3DGS of a banana and a truck. OpenSplat is an open source 3DGS software that is free to use and is available on GitHub.
+          We have used OpenSplat to render the 3DGS of a banana and a truck. OpenSplat is an open source 3DGS software that is free to use and is available on <a href="https://github.com/pierotofy/OpenSplat" target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
       </section>
 
     <section className='section-step-1-3dgs'>
-      <h2>Step 1: Import the images into OpenSplat and create Sparse Point Clouds using Structure from Motion (SfM)</h2>
+      <h2>Step 1: Clone the OpenSplat repository from GitHub</h2>
         <p>
-        The first step is to import the images into OpenSplat and create Sparse Point Clouds using Structure from Motion (SfM). This is done by selecting the images and clicking on the "Create Sparse Point Clouds" button in a software called Colmap. Nerfstudio,colmap,OpenSfM are some of the software that can be used to create Sparse Point Clouds.
+        The first step is to clone the repository from GitHub locally. Installing the dependencies for appropriate hardware is an essential next step. OpenSplat works best with NVIDIA, AMD, and Apple hardware. The setup for each piece of hardware is a little different. For instance, Apple metal works differently, NVIDIA hardware has CUDA (software for hardware), and AMD has ROCm. Personally I have had success with Ubuntu and Mac systems, as they’re convenient to use.
         </p>
     </section>
     <section className='section-step-2-3dgs'>
-      <h2>Step 2: Populate the Sparse Point Clouds with 3D Gaussians</h2>
+      <h2>Step 2: Creating sparse points from the Structure from motion (SfM)</h2>
         <p>
-        The second step is to populate the Sparse Point Clouds with 3D Gaussians. This is done by selecting the Sparse Point Clouds and clicking on the "Populate with 3D Gaussians" button in OpenSplat.
+        The two-dimensional images need to be processed through structure from motion. It is a process in which the 2D images are converted into 3D sparse clouds. These sparse clouds hold the blueprint of the two-dimensional images in 3D space. To make this happen, software like COLMAP, NerfStudio, OpenSfM, ODM, and OpenMVG are used.  
         </p>
     </section>
     <section className='section-step-3-3dgs'>
-      <h2>Step 3: Render the 3DGS using Splatter.app</h2>
+      <h2>Step 3: Final process to obtain .ply and cameras. json files (output files)</h2>
         <p>
-        The third step is to render the 3DGS .ply file using a service like Splatter.app. Splatter.app is a service that allows you to render 3DGS .ply files in real time.
+        The final step is to obtain the output through processing the sparse points input and adding colors, depth, brightness, and other details to the sparse points. This is done through a series of steps. Each step is a process of creating the 3-D scene. The minimum number of steps to create a 3-D scene is 2000 steps. To get a photorealistic 3D scene, 30k-50k steps are necessary; this will ensure a photorealistic quality for the scene. Once these steps are done, the output is in the form of a .ply and cameras.json file. The obtained .ply file can be viewed through online 3D viewers like SuperSplat, PlayCanvas, or any other viewers.  
         </p>
     </section>
     <section className='section-Example-3dgs'>
       <h2>Example of 3DGS using Splatter.app</h2>
         <p>
-        We have used Splatter.app to render the 3DGS of a banana and a truck.
+        We have used Splatter.app to render the 3DGS of a banana and a truck using the .ply and cameras.json files obtained from OpenSplat.
         </p>
     </section>
 
@@ -181,7 +180,7 @@ function App() {
         </div>
       </section>
       <section className='section-conclusion'>
-        <h2>Comparison of 3DGS, NeRFs and Photogrammetry Side by Side</h2>
+        <h2>Side by Side Comparison of 3DGS, NeRFs and Photogrammetry</h2>
         
         <div className="comparison-container">
           <div className="comparison-table-wrapper">
