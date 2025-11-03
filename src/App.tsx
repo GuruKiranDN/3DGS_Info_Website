@@ -65,121 +65,8 @@ function App() {
         </p>
         <Carousel images={gaussianSplattingImages} title="3D Gaussian Splatting Process" />
       </section>
-
-      <section className='section-example-3dgs'>
-      <h2>Example of 3DGS using OpenSplat(Open Source 3DGS Software)</h2>
-        <p>
-          We have used OpenSplat to render the 3DGS of a banana and a truck. OpenSplat is an open source 3DGS software that is free to use and is available on <a href="https://github.com/pierotofy/OpenSplat" target="_blank" rel="noopener noreferrer">GitHub</a>.
-        </p>
-      </section>
-
-    <section className='section-step-1-3dgs'>
-      <h2>Step 1: Clone the OpenSplat repository from GitHub</h2>
-        <p>
-        The first step is to clone the repository from GitHub locally. Installing the dependencies for appropriate hardware is an essential next step. OpenSplat works best with NVIDIA, AMD, and Apple hardware. The setup for each piece of hardware is a little different. For instance, Apple metal works differently, NVIDIA hardware has CUDA (software for hardware), and AMD has ROCm. Personally I have had success with Ubuntu and Mac systems, as they’re convenient to use.
-        </p>
-    </section>
-    <section className='section-step-2-3dgs'>
-      <h2>Step 2: Creating sparse points from the Structure from motion (SfM)</h2>
-        <p>
-        The two-dimensional images need to be processed through structure from motion. It is a process in which the 2D images are converted into 3D sparse clouds. These sparse clouds hold the blueprint of the two-dimensional images in 3D space. To make this happen, software like COLMAP, NerfStudio, OpenSfM, ODM, and OpenMVG are used.  
-        </p>
-    </section>
-    <section className='section-step-3-3dgs'>
-      <h2>Step 3: Final process to obtain .ply and cameras. json files (output files)</h2>
-        <p>
-        The final step is to obtain the output through processing the sparse points input and adding colors, depth, brightness, and other details to the sparse points. This is done through a series of steps. Each step is a process of creating the 3-D scene. The minimum number of steps to create a 3-D scene is 2000 steps. To get a photorealistic 3D scene, 30k-50k steps are necessary; this will ensure a photorealistic quality for the scene. Once these steps are done, the output is in the form of a .ply and cameras.json file. The obtained .ply file can be viewed through online 3D viewers like SuperSplat, PlayCanvas, or any other viewers.  
-        </p>
-    </section>
-    <section className='section-Example-3dgs'>
-      <h2>Example of 3DGS using Splatter.app</h2>
-        <p>
-        We have used Splatter.app to render the 3DGS of a banana and a truck using the .ply and cameras.json files obtained from OpenSplat.
-        </p>
-    </section>
-
-      <section aria-labelledby="banana-heading">
-        <h2 id="banana-heading">Banana (Data Set 1)</h2>
-        <div className="iteration-grid">
-          <article>
-            <h3>2,000 Iterations</h3>
-            <iframe 
-              src="https://splatter.app/s/eo9-khl" 
-              width="500" 
-              height="500" 
-              allowFullScreen
-              title="Banana 3D Gaussian Splatting - 2000 iterations"
-              style={{border: 'none', borderRadius: '8px'}}
-            />
-          </article>
-
-          <article>
-            <h3>6,000 Iterations</h3>
-            <iframe 
-              src="https://splatter.app/s/1ie-zov" 
-              width="500" 
-              height="500" 
-              allowFullScreen
-              title="Banana 3D Gaussian Splatting - 6000 iterations"
-              style={{border: 'none', borderRadius: '8px'}}
-            />
-          </article>
-
-          <article>
-            <h3>30,000 Iterations</h3>
-            <iframe 
-              src="https://splatter.app/s/pjy-ig5" 
-              width="500" 
-              height="500" 
-              allowFullScreen
-              title="Banana 3D Gaussian Splatting - 30000 iterations"
-              style={{border: 'none', borderRadius: '8px'}}
-            />
-          </article>
-        </div>
-      </section>
-
-      <section aria-labelledby="truck-heading">
-        <h2 id="truck-heading">Truck (Data Set 2)</h2>
-        <div className="iteration-grid">
-          <article>
-            <h3>2,000 Iterations</h3>
-            <iframe 
-              src="https://splatter.app/s/fw7-x6a" 
-              width="500" 
-              height="500" 
-              allowFullScreen
-              title="Truck 3D Gaussian Splatting - 2000 iterations"
-              style={{border: 'none', borderRadius: '8px'}}
-            />
-          </article>
-
-          <article>
-            <h3>6,000 Iterations</h3>
-            <iframe 
-              src="https://splatter.app/s/kvn-e07" 
-              width="500" 
-              height="500" 
-              allowFullScreen
-              title="Truck 3D Gaussian Splatting - 6000 iterations"
-              style={{border: 'none', borderRadius: '8px'}}
-            />
-          </article>
-
-          <article>
-            <h3>30,000 Iterations</h3>
-            <iframe 
-              src="https://splatter.app/s/q3x-gp6" 
-              width="500" 
-              height="500" 
-              allowFullScreen
-              title="Truck 3D Gaussian Splatting - 30000 iterations"
-              style={{border: 'none', borderRadius: '8px'}}
-            />
-          </article>
-        </div>
-      </section>
-      <section className='section-conclusion'>
+   
+    <section className='section-conclusion'>
         <h2>Side by Side Comparison of 3DGS, NeRFs and Photogrammetry</h2>
         
         <div className="comparison-container">
@@ -333,6 +220,117 @@ function App() {
           </div>
         </div>
       </section>
+      <section className='section-example-3dgs'>
+      <h2>Example of 3DGS using OpenSplat(Open Source 3DGS Software)</h2>
+        <p>
+          We have used OpenSplat to render the 3DGS of a banana and a truck. OpenSplat is an open source 3DGS software that is free to use and is available on <a href="https://github.com/pierotofy/OpenSplat" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        </p>
+      </section>
+      <section className='section-Example-3dgs'>
+      <h2>Example of 3DGS using Splatter.app</h2>
+        <p>
+        We have used Splatter.app to render the 3DGS of a banana and a truck using the .ply and cameras.json files obtained from OpenSplat.
+        </p>
+     </section>
+      <section aria-labelledby="banana-heading">
+        <h2 id="banana-heading">Banana (Data Set 1)</h2>
+        <div className="iteration-grid">
+          <article>
+            <h3>2,000 Iterations</h3>
+            <iframe 
+              src="https://splatter.app/s/eo9-khl" 
+              width="500" 
+              height="500" 
+              allowFullScreen
+              title="Banana 3D Gaussian Splatting - 2000 iterations"
+              style={{border: 'none', borderRadius: '8px'}}
+            />
+          </article>
+
+          <article>
+            <h3>6,000 Iterations</h3>
+            <iframe 
+              src="https://splatter.app/s/1ie-zov" 
+              width="500" 
+              height="500" 
+              allowFullScreen
+              title="Banana 3D Gaussian Splatting - 6000 iterations"
+              style={{border: 'none', borderRadius: '8px'}}
+            />
+          </article>
+
+          <article>
+            <h3>30,000 Iterations</h3>
+            <iframe 
+              src="https://splatter.app/s/pjy-ig5" 
+              width="500" 
+              height="500" 
+              allowFullScreen
+              title="Banana 3D Gaussian Splatting - 30000 iterations"
+              style={{border: 'none', borderRadius: '8px'}}
+            />
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="truck-heading">
+        <h2 id="truck-heading">Truck (Data Set 2)</h2>
+        <div className="iteration-grid">
+          <article>
+            <h3>2,000 Iterations</h3>
+            <iframe 
+              src="https://splatter.app/s/fw7-x6a" 
+              width="500" 
+              height="500" 
+              allowFullScreen
+              title="Truck 3D Gaussian Splatting - 2000 iterations"
+              style={{border: 'none', borderRadius: '8px'}}
+            />
+          </article>
+
+          <article>
+            <h3>6,000 Iterations</h3>
+            <iframe 
+              src="https://splatter.app/s/kvn-e07" 
+              width="500" 
+              height="500" 
+              allowFullScreen
+              title="Truck 3D Gaussian Splatting - 6000 iterations"
+              style={{border: 'none', borderRadius: '8px'}}
+            />
+          </article>
+
+          <article>
+            <h3>30,000 Iterations</h3>
+            <iframe 
+              src="https://splatter.app/s/q3x-gp6" 
+              width="500" 
+              height="500" 
+              allowFullScreen
+              title="Truck 3D Gaussian Splatting - 30000 iterations"
+              style={{border: 'none', borderRadius: '8px'}}
+            />
+          </article>
+        </div>
+      </section>
+      <section className='section-step-1-3dgs'>
+      <h2>Step 1: Clone the OpenSplat repository from GitHub</h2>
+        <p>
+        The first step is to clone the repository from GitHub locally. Installing the dependencies for appropriate hardware is an essential next step. OpenSplat works best with NVIDIA, AMD, and Apple hardware. The setup for each piece of hardware is a little different. For instance, Apple metal works differently, NVIDIA hardware has CUDA (software for hardware), and AMD has ROCm. Personally I have had success with Ubuntu and Mac systems, as they’re convenient to use.
+        </p>
+    </section>
+    <section className='section-step-2-3dgs'>
+      <h2>Step 2: Creating sparse points from the Structure from motion (SfM)</h2>
+        <p>
+        The two-dimensional images need to be processed through structure from motion. It is a process in which the 2D images are converted into 3D sparse clouds. These sparse clouds hold the blueprint of the two-dimensional images in 3D space. To make this happen, software like COLMAP, NerfStudio, OpenSfM, ODM, and OpenMVG are used.  
+        </p>
+    </section>
+    <section className='section-step-3-3dgs'>
+      <h2>Step 3: Final process to obtain .ply and cameras. json files (output files)</h2>
+        <p>
+        The final step is to obtain the output through processing the sparse points input and adding colors, depth, brightness, and other details to the sparse points. This is done through a series of steps. Each step is a process of creating the 3-D scene. The minimum number of steps to create a 3-D scene is 2000 steps. To get a photorealistic 3D scene, 30k-50k steps are necessary; this will ensure a photorealistic quality for the scene. Once these steps are done, the output is in the form of a .ply and cameras.json file. The obtained .ply file can be viewed through online 3D viewers like SuperSplat, PlayCanvas, or any other viewers.  
+        </p>
+    </section>
     </main>
   )
 }
