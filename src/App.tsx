@@ -30,7 +30,7 @@ function App() {
       <section className='section-brief-introduction'>
       <h2>Brief Introduction</h2>
         <p>
-        This resource explores three 3D reconstruction techniques used widely today. They are the following: 3D Gaussian Splatting (3DGS), photogrammetry, and Neural Radiance Fields (NeRFs). Additionally, this site provides a blueprint with step-by-step instructions on how to use OpenSplat (an open-source software used to rasterize 3D scenes). Additionally, it consists of interactive examples featuring banana and truck models, each of which is rendered at three different splat densities (2,000, 6,000, and 30,000 splats) to demonstrate the quality and performance. Lastly, it also explores a comparison of each other through the topics of strengths, limitations, and real-world applications.
+        This resource explores three 3D reconstruction techniques used widely today. They are the following: 3D Gaussian Splatting (3DGS), photogrammetry, and Neural Radiance Fields (NeRFs). Additionally, this site provides a blueprint with step-by-step instructions on how to use OpenSplat (an open-source software used to rasterize 3D scenes). Furthermore, it consists of interactive examples featuring banana and truck models, each of which is rendered at three different splat densities (2,000, 6,000, and 30,000 splats) to demonstrate the quality and performance. Lastly, it also explores a comparison of each other through the topics of strengths, limitations, and real-world applications.
         </p>
       </section>
 
@@ -87,7 +87,7 @@ function App() {
                 
                 <tr>
                   <td className="aspect-cell">Hardware Requirements</td>
-                  <td>Modern GPU (RTX 3000+ series recommended) 8-24 GB VRAM for rendering</td>
+                  <td>Modern GPU (RTX 3000+ series recommended), Apple Metal (M1/M2/M3 series recommended), AMD ROCm (RX 6000+ series recommended) 8-24 GB VRAM for rendering</td>
                   <td>GPU required for training. Can be CPU-rendered (very slow)</td>
                   <td>CPU processing possible. GPU accelerates reconstruction</td>
                 </tr>
@@ -106,19 +106,19 @@ function App() {
                   <td>Minutes to hours depending on scene complexity</td>
                 </tr>
                 
-                <tr>
+                {/* <tr>
                   <td className="aspect-cell">Editability</td>
                   <td>Can edit individual Gaussians. Emerging tools for editing</td>
                   <td>Hard to edit specific regions. Requires retraining for changes</td>
                   <td>Full mesh editing in any 3D software. Standard workflows</td>
-                </tr>
+                </tr> */}
                 
-                <tr>
+                {/* <tr>
                   <td className="aspect-cell">Exportability</td>
                   <td>Can export as point cloud or mesh (with loss). Not standard format yet</td>
                   <td>Must bake to mesh (quality loss). Primarily for rendering only</td>
                   <td>Standard formats (OBJ, FBX, GLTF). Universal compatibility</td>
-                </tr>
+                </tr> */}
                 
                 <tr>
                   <td className="aspect-cell">Camera Pose Requirements</td>
@@ -145,7 +145,7 @@ function App() {
                   <td>Quality degrades with extreme angles. Depends on mesh quality</td>
                 </tr>
                 
-                <tr className="category-header">
+                {/* <tr className="category-header">
                   <td colSpan={4}><strong>VR & GAME ENGINE COMPATIBILITY</strong></td>
                 </tr>
                 
@@ -187,7 +187,7 @@ function App() {
                   <td>Pre-rendered tours only, Exceptional visual quality, Limited interactivity</td>
                   <td>Full freedom of movement, Editable environments, Proven solution</td>
                 </tr>
-                
+                 */}
                 <tr>
                   <td className="aspect-cell">Game Development</td>
                   <td>Experimental use cases, Real-time performance, Limited tooling currently</td>
@@ -202,38 +202,39 @@ function App() {
                   <td>Full design workflow, Easy modifications, Industry standard</td>
                 </tr>
                 
-                <tr>
+                {/* <tr>
                   <td className="aspect-cell">Cultural Heritage Preservation</td>
                   <td>Fast capture processing, Interactive exploration, Photorealistic archival</td>
                   <td>Highest quality preservation, Perfect for archival, Research standard</td>
                   <td>Measurable 3D data, Conservation analysis, Long-term standard</td>
-                </tr>
+                </tr> */}
                 
-                <tr>
+                {/* <tr>
                   <td className="aspect-cell">Film/VFX Production</td>
                   <td>Background environments, Real-time previsualization, New to pipeline</td>
                   <td>High-quality renders, Research applications, Offline rendering</td>
                   <td>Industry standard, Full pipeline integration, Asset creation</td>
-                </tr>
+                </tr> */}
               </tbody>
             </table>
           </div>
         </div>
       </section>
-      <section className='section-example-3dgs'>
-      <h2>Example of 3DGS using OpenSplat(Open Source 3DGS Software)</h2>
-        <p>
-          We have used OpenSplat to render the 3DGS of a banana and a truck. OpenSplat is an open source 3DGS software that is free to use and is available on <a href="https://github.com/pierotofy/OpenSplat" target="_blank" rel="noopener noreferrer">GitHub</a>.
-        </p>
-      </section>
+      
       <section className='section-Example-3dgs'>
-      <h2>Example of 3DGS using Splatter.app</h2>
+      <h2>Comparing Novel View Quality of 3DGS 3D Models with increasing number of iterations</h2>
         <p>
-        We have used Splatter.app to render the 3DGS of a banana and a truck using the .ply and cameras.json files obtained from OpenSplat.
+        Iterations are the number of times the sparse points are populated with 3D Gaussians. The more the iterations, the more the 3D Gaussians are populated, and the more the novel view quality of the 3D model is.
+        We have used Splatter.app to render the 3DGS of a banana and a truck using the .ply and cameras.json files obtained from OpenSplat. The data set is the same for all the iterations. The only difference is the number of iterations.
         </p>
      </section>
+
       <section aria-labelledby="banana-heading">
         <h2 id="banana-heading">Banana (Data Set 1)</h2>
+        <p>The following example of a banana 3DGS model is rendered at 2,000, 6,000, and 30,000 iterations, respectively.</p>
+        <div style={{ textAlign: 'center' }}>
+          <img src="https://res.cloudinary.com/dkv4qdfkz/image/upload/v1762380507/3DGS/Banana_abmjsv.png" alt="Banana 3DGS Model - 2000 iterations" style={{ maxWidth: '100%', height: 'auto' }} />
+        </div>
         <div className="iteration-grid">
           <article>
             <h3>2,000 Iterations</h3>
@@ -275,6 +276,10 @@ function App() {
 
       <section aria-labelledby="truck-heading">
         <h2 id="truck-heading">Truck (Data Set 2)</h2>
+        <p>The following example of a truck 3DGS model is rendered at 2,000, 6,000, and 30,000 iterations, respectively.</p>
+        <div style={{ textAlign: 'center' }}>
+          <img src="https://res.cloudinary.com/dkv4qdfkz/image/upload/v1762380507/3DGS/Truck_szpqhe.png" alt="Banana 3DGS Model - 2000 iterations" style={{ maxWidth: '100%', height: 'auto' }} />
+        </div>
         <div className="iteration-grid">
           <article>
             <h3>2,000 Iterations</h3>
@@ -313,6 +318,83 @@ function App() {
           </article>
         </div>
       </section>
+      <section className="section-jarvis">
+        <h2>Custom Scene Reconstruction (Jarvis Student Center for Innovation and Collaboration computer lab)</h2>
+        <p>The following example of a Jarvis Student Center for Innovation and Collaboration 3DGS model. This was recreated using 32 photographs of the Jarvis Center Computer Lab in various angles.</p>
+        <div style={{ textAlign: 'center' }}>
+          <img src="https://res.cloudinary.com/dkv4qdfkz/image/upload/v1762380506/3DGS/Jarvis_v591js.png" alt="Computer Lab 3DGS Model" style={{ maxWidth: '100%', height: 'auto' }} />
+        </div>
+        <article style={{ textAlign: 'center', margin: '24px auto', maxWidth: '800px' }}>
+            <h3>Computer Lab View</h3>
+            <iframe 
+              src="https://splatter.app/s/pal-f5u" 
+              width="800" 
+              height="600" 
+              allowFullScreen
+              title="Computer Lab 3D Gaussian Splatting - 6000 iterations"
+              style={{border: 'none', borderRadius: '8px'}}
+            />
+        </article>
+      </section>
+      <section className="section-jarvis">
+        <h2>Points of failure in 3DGS</h2>
+        <p>The following Example of archetectural reconstruction of the iconic Chiacago Bean. Inspite of having 360 degree, and ample number of photographs(~250 images), the reconstruction is far from perfect. This is beacuse of the following reasons:
+        DGS assumes that each point in 3D space has a consistent appearance across different viewpoints. Mirrors break this assumption because:
+        <br/>
+        <ul>
+        <li>The "scene" visible in a mirror changes based on camera position</li>
+        <br/>
+        <li>The same pixel location in the mirror shows different content from different angles</li>
+        <br/>
+        <li>This creates conflicting photometric constraints during optimization</li>
+        </ul>
+        </p>
+        <div style={{ textAlign: 'center' }}>
+          <img src="https://res.cloudinary.com/dkv4qdfkz/image/upload/v1762380507/3DGS/Bean_bxycxa.png" alt="Computer Lab 3DGS Model" style={{ maxWidth: '100%', height: 'auto' }} />
+        </div>
+        <article style={{ textAlign: 'center', margin: '24px auto', maxWidth: '800px' }}>
+            <h3>Bean View</h3>
+            <iframe 
+              src="https://splatter.app/s/put-ma2" 
+              width="800" 
+              height="600" 
+              allowFullScreen
+              title="Bean 3D Gaussian Splatting - 6000 iterations"
+              style={{border: 'none', borderRadius: '8px'}}
+            />
+        </article>
+        <p>The Gaussian Splatting also fails to accurately measeure depth and distance when the scene has less information. It renders the scene as a flat surface which looks like a cardboard cutout 3D model from 2D Images.
+        This happens because of :
+        <ul>
+        <h3>Insufficient Geometric Constraints</h3>
+        <li>3DGS learns from photometric consistency - it places Gaussians where they can explain the pixels it sees across multiple views</li>
+        <br/>
+        <li>With limited viewpoints, there are infinite possible 3D configurations that could produce the same 2D images</li>
+        <br/>
+        <li>Without enough angular variation between camera positions, the optimization has no way to determine true depth structure</li>
+        </ul>
+        </p>
+        <article style={{ textAlign: 'center', margin: '24px auto', maxWidth: '800px' }}>
+            <h3>Bean View</h3>
+            <iframe 
+              src="https://splatter.app/s/7zz-wvj" 
+              width="800" 
+              height="600" 
+              allowFullScreen
+              title="Jarvis Student Center for Innovation and Collaboration Kitchen View"
+              style={{border: 'none', borderRadius: '8px'}}
+            />
+        </article>
+      </section>
+      <section className='section-example-3dgs'>
+      <h2>How to create your own 3DGS using OpenSplat(Open Source 3DGS Software)</h2>
+        <p>
+          We have used OpenSplat to render the 3DGS of custom scenes as well as banana and truck datasets. OpenSplat is an open source 3DGS software that is free to use and is available on <a href="https://github.com/pierotofy/OpenSplat" target="_blank" rel="noopener noreferrer">GitHub</a>.
+          <br/>
+          Here is a step by step guide to create your own 3DGS using OpenSplat:
+        </p>
+      </section>
+      
       <section className='section-step-1-3dgs'>
       <h2>Step 1: Clone the OpenSplat repository from GitHub</h2>
         <p>
