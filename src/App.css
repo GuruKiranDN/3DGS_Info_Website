@@ -221,6 +221,53 @@ section {
   }
 }
 
+/* Responsive iframe container */
+.iframe-container {
+  text-align: center;
+  margin: 24px auto;
+  max-width: 800px;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.iframe-container h3 {
+  margin-bottom: 16px;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border: none;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Responsive adjustments for iframe containers */
+@media (max-width: 768px) {
+  .iframe-container {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+  
+  .iframe-container h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .iframe-container {
+    margin: 16px auto;
+    padding: 0 8px;
+  }
+  
+  .iframe-container h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+}
+
 /* Print styles */
 @media print {
   .comparison-container {
